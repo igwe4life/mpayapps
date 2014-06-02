@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Mpaying.com | Mobile payment</title>
+        
+		<!--<link rel="stylesheet" href="themesOLD/CVone.min.css" />
+		<link rel="stylesheet" href="css/jquery.mobile.structure-1.1.0.min.css" />
+		<script src="js/jquery-1.7.1.min.js"></script>
+		<script src="js/jquery.mobile-1.1.0.min.js"></script>
+	    <script type="text/javascript" src="js/modernizr-latest.js"></script>-->
+        
+        <link rel="stylesheet" href="themes/mpaying1.min.css" />
+        <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile.structure-1.4.2.min.css" />
+        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+        <script type="text/javascript" src="js/modernizr-latest.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/jquery.validate.js"></script>
+		<link rel="stylesheet" href="css/app.css" />		
+
+    <style>
+        #message {
+            display: none;
+            border-radius: 10px;
+            padding: 10px;
+            background-color: #ff0000;
+            color: #fff;
+        }
+
+        #storageDemoPage h2 {
+            white-space: normal;
+        }
+    .style1 {font-size: 10px}
+	.splash {
+	   align: center;
+	   position: fixed;
+	   top: 25%;
+	   left: 40%;
+	   margin-top: -27px;
+	   margin-left: -27px;
+	}
+    </style>
+	<script type='text/javascript'>//<![CDATA[ 
+	$(window).load(function(){
+	$(function() {
+	  setTimeout(hideSplash, 5000);
+	});
+	
+	function hideSplash() {
+	  $.mobile.changePage("#home", "fade");
+	}
+	
+	
+	});//]]>  
+	
+	</script>
+	</head>
+	<body>
+		<div data-role="page" data-theme="b" id="splash" style="background-image:url(img/bg.png)"> 
+		<div class="splash" data-theme="b">
+			<img src="img/mpaylogo.png" alt="splash" align="middle" />
+			<p align="center"><img src="img/loading.gif" alt="splash" /></p>
+			<p align="center" class="intro strong">Loading...</p>
+		</div>
+		</div>
+		<div data-role="page" id="home" data-theme="b">
+			<div data-role="header">
+				<h1><img border="0" align="middle" src="img/header.png" alt="Logo, CV Writers"/></h1></div>
+			<div data-role="content" data-theme="b">
+			<form method="POST" action="http://mpaying.com/test/login.php" data-ajax="false">
+			<input type="text" name="login_username" id="login_username" placeholder="USER ID" /><br>
+			<input type="password" name="login_password" id="login_password" placeholder="PIN" /><br>
+			<button id="login_submit" type="submit" data-theme="a">Login</button>
+			</form>
+            <div align="center" data-role=controlgroup data-type=horizontal>
+            <a href="#signup" class="ui-btn ui-mini">Signup</a>
+            <a href="#forgot" class="ui-btn ui-mini">Forgot Login</a>
+            </div>
+			</div>
+
+			<div data-role="footer" data-position="fixed">
+				<h4>&copy; Mpaying</h4>
+			</div>
+		</div>
+
+<div data-role="page" id="failed" data-theme="b">
+<div data-role="header">
+<h1><img border="0" align="middle" src="img/header.png" alt="Logo, CV Writers"/></h1><a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home">Home</a></div>
+		<div data-role="content" data-theme="b">
+		<p align="center">
+		<font color="#FF0000">
+		<strong>Login Failed!</strong> <br/ >
+		<span class="style1">Pls check Username & password and try again!</span></font>
+		</p>
+		<form method="POST" action="http://mpaying.com/test/login.php" data-ajax="false">
+		<input type="text" name="login_username" id="login_username" placeholder="USER ID" /><br>
+		<input type="password" name="login_password" id="login_password" placeholder="PIN" /><br>
+		<button id="login_submit" type="submit" data-theme="a">Login</button>
+		</form>
+        <a href="#signup" class="ui-btn ui-mini">Signup</a>
+        <a href="#forgot" class="ui-btn ui-mini">Forgot Login</a>
+		</div>
+
+	<div data-role="footer" data-position="fixed">
+		<h4>&copy; Mpaying</h4>
+	</div>
+
+</div>
+
+<div data-role="page" id="forgot" data-theme="b">
+<div data-role="header">
+<h1><img border="0" align="middle" src="img/header.png" alt="Logo, CV Writers"/></h1><a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home">Home</a></div>
+		<div data-role="content" data-theme="b">
+		<p align="center">
+		<font color="#FF0000">
+		<strong>Forgot Login Info!</strong> <br/ >
+		<span class="style1">Pls enter your email!</span></font>
+		</p>
+		<form method="POST" action="http://mpaying.com/test/forgot.php" data-ajax="false">
+		<input type="text" name="email" id="email" placeholder="Email Address" /><br>
+		<button id="login_submit" type="submit" data-theme="a">Reset</button>
+		</form>
+		</div>
+
+	<div data-role="footer" data-position="fixed">
+		<h4>&copy; Mpaying</h4>
+	</div>
+
+</div>
+
+<div data-role="page" id="signup" data-theme="b">
+<div data-role="header">
+<h1><img border="0" align="middle" src="img/header.png" alt="Logo, CV Writers"/></h1><a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home">Home</a></div>
+		<div data-role="content" data-theme="b">
+		<p align="center">
+		<font color="#FF0000">
+		<strong>New Signup Form!</strong> <br/ >
+
+		<form action="http://mpaying.com/test/process.php" method="post">
+ 
+			<fieldset data-role="fieldcontain"> 
+				<label for="email">Email:</label>
+				<input type="email" name="email" id="email" class="required email" minlength="5">
+			</fieldset>
+ 
+ 			<fieldset data-role="fieldcontain"> 
+				<label for="username">Full Name:</label>
+				<input type="text" name="fullname" id="fullname" class="required" minlength="5">
+			</fieldset>
+ 
+			<fieldset data-role="fieldcontain"> 
+				<label for="password">Password:</label>
+				<input type="password" name="password" id="password" class="required" minlength="5">
+			</fieldset>
+ 
+			<fieldset data-role="fieldcontain"> 
+				<label for="password2">Confirm Password:</label>
+				<input type="password" name="password2" id="password2" class="required passmatch" minlength="5">
+			</fieldset>
+ 
+			<fieldset data-role="fieldcontain"> 
+				<label for="favcolor">Account Type:</label>
+				<select id="accType" name="accType" class="required" minlength="5">
+					<option>Select One</option>
+					<option>Individual</option>
+					<option>Agent</option>
+				</select>
+			</fieldset>
+ 
+			<fieldset data-role="fieldcontain"> 
+				<label for="hometown">Phone No:</label>
+				<input type="text" name="gsm" id="gsm" class="required" minlength="5">
+			</fieldset>
+ 
+			<input type="submit" value="Register">
+ 
+		</form>
+
+		</div>
+
+	<div data-role="footer" data-position="fixed">
+		<h4>&copy; Mpaying</h4>
+	</div>
+
+</div>
+
+</body>
+</html>
